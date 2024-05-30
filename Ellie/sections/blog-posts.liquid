@@ -1,0 +1,35 @@
+<section class="blog-posts">
+  <header>
+    <h4 class="blog-posts-subheading">Latest News</h4>
+    <h2 class="blog-posts-heading">From the Blog</h2>
+    <p class="blog-posts-desc">Stay up to date with news from our blog.</p>
+  </header>
+
+  <div class="blog-posts-flex">
+    {% for article in blogs.news.articles %}
+      <div class="blog-post-wrapper">
+        <div class="post-img">
+          {{ article.image | image_url: width: null, height: null | image_tag }}
+        </div>
+        <div class="post-details">
+          <span class="post-category"> News </span>
+          <span class="post-date">
+            {{ images['calendar-icon.svg'] | image_url: width: null, height: null | image_tag }}
+            {{ article.created_at | date: '%B %d, %Y' }}
+          </span>
+        </div>
+        <h4 class="post-title">
+          {{ article.title }}
+        </h4>
+        <p class="post-excerpt">
+          {{ article.excerpt_or_content | strip_html | truncatewords: 100 | append: '...' }}
+        </p>
+        <div class="post-cta">
+          <a href="{{ article.url }}">
+            <button class="cta">Read More</button>
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

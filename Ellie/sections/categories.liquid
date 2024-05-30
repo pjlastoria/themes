@@ -1,0 +1,42 @@
+<section class="categories">
+  <h2 class="section-heading">
+    Shop By Category
+  </h2>
+  <div class="categories-inner">
+    <div class="category-image-wrapper">
+      <div class="category-image">
+        {{ images['category-rings.jpg'] | image_url: width: null, height: null | image_tag }}
+        <div class="image-cover">
+          <h4 class="category-img-heading">Rings</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-image-wrapper">
+      <div class="category-image">
+        {{ images['category-necklaces.jpg'] | image_url: width: null, height: null | image_tag }}
+        <div class="image-cover">
+          <h4 class="category-img-heading">Necklaces</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-image-wrapper">
+      <div class="category-image">
+        {{ images['category-earrings.jpg'] | image_url: width: null, height: null | image_tag }}
+        <div class="image-cover">
+          <h4 class="category-img-heading">Earrings</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-image-wrapper">
+      <div class="category-image">
+        {{ images['category-bracelets.jpg'] | image_url: width: null, height: null | image_tag }}
+        <div class="image-cover">
+          <h4 class="category-img-heading">Bracelets</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

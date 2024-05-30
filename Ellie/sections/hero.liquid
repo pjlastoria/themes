@@ -1,0 +1,32 @@
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-text-inner">
+        <h1 class="hero-heading">Stylish Jewelry to Impress</h1>
+        <p class="hero-subheading">
+          Welcome to Shirley's Shop where craft and budget meet. <br>
+          Browse our new collection.
+        </p>
+        <div class="hero-btn-wrapper">
+          <button class="left-btn cta">Shop Now</button>
+          <button class="right-btn cta">Signup</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-images">
+      <div class="hero-images-inner">
+        <div class="hero-image-wrapper">
+          {{ images['hero-model-1.jpg'] | image_url: width: null, height: null | image_tag }}
+        </div>
+
+        <div class="hero-image-wrapper">
+          {{ images['hero-model-2.jpg'] | image_url: width: null, height: null | image_tag }}
+        </div>
+
+        <div class="hero-image-wrapper">
+          {{ images['hero-model-3.jpg'] | image_url: width: null, height: null | image_tag }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

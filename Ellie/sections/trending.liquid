@@ -1,0 +1,26 @@
+<section class="trending">
+  <h2 class="section-heading">Trending this Week</h2>
+  <div class="trending-inner">
+    <div class="product-flex" id="anim">
+      {% for product in collections.trending.products %}
+        <div class="product-card">
+          <div class="product-image">
+            {{ product.featured_image | image_url: width: null, height: null | image_tag }}
+            <div class="image-cover">
+              <button class="product-image-btn cta">View</button>
+            </div>
+          </div>
+          <ul class="product-text">
+            <li class="product-name">{{ product.title }}</li>
+            <li class="product-price">{{ product.price | money }}</li>
+            <li>5 Left In Stock</li>
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="cta-wrapper">
+      <button class="trending-btn cta">See More</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+<footer>
+  <div class="footer-inner">
+    <div class="footer-newsletter-form">
+      <h2>Get Updates in Your Inbox</h2>
+
+      {% form 'contact' %}
+        <input type="text">
+        <input type="submit" value="Signup">
+      {% endform %}
+
+      <ul class="footer-socials">
+        <li>
+          {{ images['tiktok-icon.svg'] | image_url: width: null, height: null | image_tag }}
+        </li>
+        <li>
+          {{ images['facebook-icon.svg'] | image_url: width: null, height: null | image_tag }}
+        </li>
+        <li>
+          {{ images['instagram-icon.svg'] | image_url: width: null, height: null | image_tag }}
+        </li>
+        <li>
+          {{ images['youtube-icon.svg'] | image_url: width: null, height: null | image_tag }}
+        </li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <ul class="footer-links-left">
+        <li>Contact</li>
+        <li>FAQ</li>
+        <li>Refund Polcy</li>
+        <li>Collections</li>
+      </ul>
+      <ul class="footer-links-right">
+        <li>Privacy Policy</li>
+        <li>Terms and Conditions</li>
+        <li>Compliance</li>
+        <li>Track Order</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% javascript %}
+  let productCards = document.getElementsByClassName('product-flex')[0];
+  let blogPosts = document.getElementsByClassName('blog-posts-flex')[0];
+  let categorieSection = document.getElementsByClassName('categories-inner')[0];
+
+  let aboutImgs = document.getElementsByClassName('about-images-inner')[0];
+  let aboutTxt = document.getElementsByClassName('about-text-inner')[0];
+
+  let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.7,
+  };
+
+  let callback = (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.target === aboutImgs) {
+        aboutImgs.classList.add('animate-right');
+        aboutTxt.classList.add('animate-left');
+        return;
+      }
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-up');
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(callback, options);
+
+  observer.observe(productCards);
+  observer.observe(categorieSection);
+  observer.observe(aboutImgs);
+  observer.observe(blogPosts);
+{% endjavascript %}

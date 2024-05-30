@@ -1,0 +1,21 @@
+<nav class="desktop-nav">
+  <div class="logo-wrapper">
+    {{ images['shirleys-logo.png'] | image_url: width: 208 | image_url: height: 52 | image_tag }}
+  </div>
+
+  <ul class="nav-links">
+    {% for link in linklists['main-menu'].links %}
+      <li class="nav-link">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="login-wrapper">
+    {% for link in linklists['login-nav'].links %}
+      <li class="nav-link">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
